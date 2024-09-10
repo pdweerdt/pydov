@@ -302,6 +302,12 @@ Query using lists
 
 pydov extends the default OGC filter expressions described above with a new expression `PropertyInList` that allows you to use lists (of strings) in search queries.
 
+::
+
+    from pydov.util.query import PropertyInList
+
+::
+
 The `PropertyInList` internally translates to a `PropertyIsEqualTo` and is relevant for string, numeric, date or boolean attributes:
 
 PropertyInList
@@ -309,7 +315,7 @@ PropertyInList
 
     Internally this is translated to ``Or([PropertyIsEqualTo(), PropertyIsEqualTo(), ...])``.
 
-    Example: ``PropertyInList(propertyname='methode', list=['ramkernboring', 'spoelboring', 'spade'])``
+    Example: ``PropertyInList(propertyname='methode', lst=['ramkernboring', 'spoelboring', 'spade'])``
 
 
 Join different searches
